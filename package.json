@@ -8,8 +8,9 @@
     "fix": "eslint src --fix",
     "lint": "eslint src",
     "precommit": "yarn run lint",
-    "serve": "yarn run build && node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "yarn run build && dotenv node dist/index.js",
+    "test:e2e": "./scripts/e2e.test.sh",
+    "watch": "nodemon -w src --exec yarn run serve"
   },
   "repository": {
     "type": "git",
@@ -22,19 +23,19 @@
   },
   "homepage": "https://github.com/eaparks/enterpriseJSApps#readme",
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.17.2",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.13.0",
-    "husky": "^2.2.0",
-    "nodemon": "^1.19.0",
-    "rimraf": "^2.6.3"
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "cucumber": "^3.2.1",
+    "dotenv-cli": "^1.4.0",
+    "nodemon": "^1.12.1",
+    "rimraf": "^2.6.2",
+    "superagent": "^3.8.2"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.4.4"
+    "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "elasticsearch": "^14.0.0",
+    "express": "^4.16.2"
   }
 }
