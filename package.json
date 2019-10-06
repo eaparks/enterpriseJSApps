@@ -1,41 +1,57 @@
 {
-  "name": "enterprisejsapps",
-  "version": "0.1.0",
-  "description": "Learning enterprise javascript",
-  "main": "index.js",
-  "scripts": {
-    "build": "rimraf dist && babel src -d dist",
-    "fix": "eslint src --fix",
-    "lint": "eslint src",
-    "precommit": "yarn run lint",
-    "serve": "yarn run build && dotenv node dist/index.js",
-    "test:e2e": "./scripts/e2e.test.sh",
-    "watch": "nodemon -w src --exec yarn run serve"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/eaparks/enterpriseJSApps.git"
-  },
-  "author": "Ed Parks",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/eaparks/enterpriseJSApps/issues"
-  },
-  "homepage": "https://github.com/eaparks/enterpriseJSApps#readme",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-register": "^6.26.0",
-    "cucumber": "^3.2.1",
-    "dotenv-cli": "^1.4.0",
-    "nodemon": "^1.12.1",
-    "rimraf": "^2.6.2",
-    "superagent": "^3.8.2"
-  },
-  "dependencies": {
-    "babel-polyfill": "^6.26.0",
-    "body-parser": "^1.18.2",
-    "elasticsearch": "^14.0.0",
-    "express": "^4.16.2"
-  }
+	"name": "enterprisejsapps",
+	"version": "0.1.0",
+	"description": "Learning enterprise javascript",
+	"main": "index.js",
+	"scripts": {
+		"build": "rimraf dist && babel src -d dist",
+		"lint": "eslint src -f node_modules/eslint-detailed-reporter/lib/detailed.js -o src/test/reports/eslint_report.html",
+		"lint-fix": "eslint src --fix",
+		"precommit": "yarn run lint",
+		"serve": "yarn run build && dotenv node dist/index.js",
+		"test:e2e": "./scripts/e2e.test.sh",
+		"watch": "nodemon -w src --exec yarn run serve"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/eaparks/enterpriseJSApps.git"
+	},
+	"author": "Ed Parks",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/eaparks/enterpriseJSApps/issues"
+	},
+	"homepage": "https://github.com/eaparks/enterpriseJSApps#readme",
+	"devDependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-eslint": "^10.0.1",
+		"babel-preset-env": "^1.6.1",
+		"babel-register": "^6.26.0",
+		"cucumber": "^3.2.1",
+		"dotenv-cli": "^1.4.0",
+		"eslint": "^5.14.1",
+		"eslint-config-airbnb-base": "^13.1.0",
+		"eslint-config-prettier": "^6.1.0",
+		"eslint-detailed-reporter": "^0.8.0",
+		"eslint-import-resolver-webpack": "^0.10.1",
+		"eslint-plugin-babel": "^5.3.0",
+		"eslint-plugin-cucumber": "^1.2.0",
+		"eslint-plugin-import": "^2.14.0",
+		"eslint-plugin-json": "^1.2.1",
+		"eslint-plugin-jsx-a11y": "^6.1.2",
+		"eslint-plugin-prettier": "^3.1.0",
+		"eslint-plugin-react": "^7.12.3",
+		"eslint-plugin-webdriverio": "^1.0.1",
+		"nodemon": "^1.12.1",
+		"prettier": "^1.18.2",
+		"rimraf": "^2.6.2",
+		"superagent": "^3.8.2",
+		"webpack": "^4.41.0"
+	},
+	"dependencies": {
+		"babel-polyfill": "^6.26.0",
+		"body-parser": "^1.18.2",
+		"elasticsearch": "^16.4.0",
+		"express": "^4.16.2"
+	}
 }
