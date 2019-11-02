@@ -1,8 +1,8 @@
 import assert from 'assert';
 import superagent from 'superagent';
-import {Given, When, Then} from 'cucumber';
+import {Given, Then, When} from 'cucumber';
 import elasticsearch from 'elasticsearch';
-import {getValidPayload, convertStringToArray} from './utils';
+import {convertStringToArray, getValidPayload} from './utils';
 
 const client = new elasticsearch.Client({
     host: `${process.env.ELASTICSEARCH_PROTOCOL}://${process.env.ELASTICSEARCH_HOSTNAME}:${process.env.ELASTICSEARCH_PORT}`
